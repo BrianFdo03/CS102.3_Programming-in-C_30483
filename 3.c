@@ -3,25 +3,27 @@
 
 int main()
 {
-	int i=1,no,ans=1;
+	int item_price,sup_items = 0,total = 0;
+	float avg_price;
 
-	printf("Enter the number you want the factorial of : " );
-	scanf("%d" , &no);
-
-	if (no<0)
+	for (int i = 1; i <= 10; ++i)
 	{
-		printf("%d is an invalid input \n",no );
-		return 0;
+		printf("Input price of item No %d\n",i );
+		scanf("%d",&item_price);
+
+		total += item_price;	
+
+		if (item_price > 200)
+		{
+			sup_items++;
+		}
+
 	}
+
+	avg_price = (float)total/10.0;
+
+	printf("Number of items with price greater than Rs. 200 : %d\n",sup_items );
+	printf("Average of an item : %.2f\n",sup_items );
 	
-	do
-	{
-		ans = ans*i;
-		i++;
-
-	} while (i <= no);
-
-	printf("%d! = %d\n",no ,ans );
-
 	return 0;
 }
